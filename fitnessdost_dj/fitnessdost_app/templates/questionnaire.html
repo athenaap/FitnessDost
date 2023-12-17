@@ -1,0 +1,13 @@
+<!-- questionnaire.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <h2>Fitness Goal Questionnaire</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  {# This will render the form fields #}
+    <button type="submit">Submit</button>
+  </form>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}  {# Assuming you have a base template #}
+
+{% block content %}
+  <div class="container">
+    <h2>User Profile</h2>
+    <div class="profile-details">
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>First Name:</strong> {{ user.first_name }}</p>
+      <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+      <p><strong>Birth Date:</strong> {{ profile.birth_date|date:"Y-m-d" }}</p>
+      <p><strong>Height:</strong> {{ profile.height }} meters</p>
+      <p><strong>Weight:</strong> {{ profile.weight }} kilograms</p>
+    </div>
+
+    {# Link to edit profile page #}
+    <a href="{% url 'edit_user_profile' user.id %}">Edit Profile</a>
+  </div>
+{% endblock %}
